@@ -315,6 +315,10 @@ section {
   background: #f5f8fd;
 }
 
+.portfolio-section-bg{
+  background: #f5f8ff;
+}
+
 .section-title {
   padding-bottom: 30px;
 }
@@ -343,7 +347,28 @@ section {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
+.project-title {
+  font-size: 23.5px;
+  margin-bottom: 4px;
+  margin-top: 2px;
+}
+.bold {
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+}
+@media only screen and (max-width: 476px) {
+  .project-title{
+    font-size: 20px;
+  }
+}
+
+.project-guide{
+  font-size:16px;
+  text-align: justify;
+}
+
+*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
 .about .content h3 {
@@ -531,7 +556,7 @@ section {
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .portfolio #portfolio-flters {
