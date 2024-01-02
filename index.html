@@ -585,7 +585,7 @@
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
               <form
-                action="api/sendEmail"
+                action="/api/sendEmail"
                 method="post"
                 role="form"
                 class="php-email-form"
@@ -692,7 +692,7 @@
         const form = document.getElementById("email-form");
         const formData = new FormData(form);
   
-        fetch('api/sendEmail', {
+        fetch('/api/sendEmail', {
           method: 'POST',
           body: formData,
         })
