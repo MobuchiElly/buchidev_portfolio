@@ -583,12 +583,10 @@
               </div>
             </div>
 
-            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch form-div">
               <form
-                action="/api/sendEmail"
-                method="post"
-                role="form"
-                class="php-email-form"
+                action="#"
+                class="php-email-form js-email-form"
                 id="email-form"
               >
                 <div class="row">
@@ -598,18 +596,18 @@
                       type="text"
                       name="name"
                       class="form-control"
-                      id="name"
-                      required
+                      id="name" placeholder="jason name"
+                      
                     />
                   </div>
                   <div class="form-group col-md-6">
                     <label for="email">Your Email</label>
                     <input
-                      type="email"
+                      type="mail"
                       class="form-control"
                       name="email"
-                      id="email"
-                      required
+                      id="email" placeholder="example@gmail.com"
+                      
                     />
                   </div>
                 </div>
@@ -619,8 +617,8 @@
                     type="text"
                     class="form-control"
                     name="subject"
-                    id="subject"
-                    required
+                    id="subject" placeholder="Software Developer Needed"
+                    
                   />
                 </div>
                 <div class="form-group">
@@ -628,19 +626,17 @@
                   <textarea
                     class="form-control"
                     name="message"
-                    rows="10"
-                    required
+                    id="message"
+                    rows="10" placeholder="I do require your services as a software developer......"
+                    
                   ></textarea>
                 </div>
                 <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
+                  <!-- <div class="loading">Loading</div> -->
+                  <div class="error-message "></div>
                 </div>
                 <div class="text-center">
-                  <button type="button" onclick="window.alert('Buchi cannot take your form at the moment. Kindly use my phone number or send a direct email. Thank you')">Send Message</button>
+                  <button type="submit" class="sbutton">Send Message</button>
                 </div>
               </form>
             </div>
@@ -674,6 +670,11 @@
       ><i class="bi bi-arrow-up-short"></i
     ></a>
 
+    <!-- Form JS scripts  -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="assets/js/sendEmail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
@@ -683,33 +684,9 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/typed.js/typed.umd.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script>
-      function submitForm() {
-        const form = document.getElementById("email-form");
-        const formData = new FormData(form);
-  
-        fetch('/api/sendEmail', {
-          method: 'POST',
-          body: formData,
-        })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.text();
-        })
-        .then(data => {
-          console.log('Success:', data);
-          form.reset();
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-      }
-    </script>
   </body>
 </html>
