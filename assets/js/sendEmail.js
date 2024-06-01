@@ -78,7 +78,6 @@ form.addEventListener('submit', (event) => {
     checkInputs();
     
     if (!fullName.classList.contains('border-danger') && !email.classList.contains('border-danger') && !subject.classList.contains('border-danger') && !message.classList.contains('border-danger')) {
-        console.log('Message can be sent now');
         sendEmail();
         form.reset();
         return false;
