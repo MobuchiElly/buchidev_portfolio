@@ -614,7 +614,7 @@ section {
 }
 
 .portfolio .portfolio-item:hover {
-  transition: 0.8s;
+  transition: 1.0s;
   transform: translate(18px, 18px) scale(110%);
   z-index:999;
 }
